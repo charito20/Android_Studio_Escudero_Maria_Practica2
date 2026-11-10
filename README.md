@@ -1,4 +1,7 @@
-# Práctica 2 – Registro de Usuarios (Android Studio)
+# Android_Studio_Escudero_Maria_Practica2
+Práctica 2 - Registro de Usuarios. Android Studio.
+
+**Autora:** María Escudero
 
 Aplicación Android (Kotlin + XML) con un formulario de **Registro de Usuarios** construido con
 componentes de Material Design 3.
