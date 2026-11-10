@@ -2,13 +2,13 @@
 
 ## Capturas de pantalla (emulador)
 
-| Pantalla inicial | Lista desplegable (Mes) |
+| Pantalla inicial |
 |---|---|
-| <img src="capturas/captura_inicial.png" width="260"> | <img src="capturas/captura_lista.png" width="260"> |
+| <img src="capturas/captura_inicial.png" width="260"> |
 
-| Formulario lleno | Al pulsar "Grabar" |
+| Formulario lleno |
 |---|---|
-| <img src="capturas/captura_llena.png" width="260"> | <img src="capturas/captura_grabar.png" width="260"> |
+| <img src="capturas/captura_llena.png" width="260"> |
 
 ## Estructura principal
 
