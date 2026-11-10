@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="24dp">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="16dp"
+            android:contentDescription="Usuario"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/user" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Registro de Usuarios"
+            android:textColor="@color/titulo"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+        <!-- Nombres -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilNombres"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="Nombres"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView5"
+            app:startIconDrawable="@drawable/person">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtNombres"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName|textCapWords" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Apellidos -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilApellidos"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="Apellidos"
+            app:layout_constraintEnd_toEndOf="@+id/tilNombres"
+            app:layout_constraintStart_toStartOf="@+id/tilNombres"
+            app:layout_constraintTop_toBottomOf="@+id/tilNombres"
+            app:startIconDrawable="@drawable/person">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtApellidos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName|textCapWords" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Tipo de documento (lista desplegable) -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilTipoDocumento"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="Tipo Doc"
+            app:layout_constraintEnd_toEndOf="@+id/tilApellidos"
+            app:layout_constraintStart_toStartOf="@+id/tilApellidos"
+            app:layout_constraintTop_toBottomOf="@+id/tilApellidos"
+            app:startIconDrawable="@drawable/identidad">
+
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:id="@+id/txtTipoDocumento"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Número de identificación -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilIdentidad"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="Número ID"
+            app:counterEnabled="true"
+            app:counterMaxLength="10"
+            app:layout_constraintEnd_toEndOf="@+id/tilTipoDocumento"
+            app:layout_constraintStart_toStartOf="@+id/tilTipoDocumento"
+            app:layout_constraintTop_toBottomOf="@+id/tilTipoDocumento"
+            app:startIconDrawable="@drawable/identidad">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtIdentidad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:maxLength="10" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Género -->
+        <ImageView
+            android:id="@+id/Genero"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginTop="8dp"
+            android:contentDescription="Género"
+            app:layout_constraintStart_toStartOf="@+id/tilIdentidad"
+            app:layout_constraintTop_toBottomOf="@+id/tilIdentidad"
+            app:srcCompat="@drawable/genero" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="Género"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/Genero"
+            app:layout_constraintStart_toEndOf="@+id/Genero"
+            app:layout_constraintTop_toTopOf="@+id/Genero" />
+
+        <RadioGroup
+            android:id="@+id/rgGenero"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@+id/tilIdentidad"
+            app:layout_constraintStart_toStartOf="@+id/tilIdentidad"
+            app:layout_constraintTop_toBottomOf="@+id/Genero">
+
+            <RadioButton
+                android:id="@+id/rbMasculino"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:drawableStart="@drawable/men"
+                android:drawablePadding="2dp"
+                android:text="Masculino" />
+
+            <RadioButton
+                android:id="@+id/rbFemenino"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:drawableStart="@drawable/mujer"
+                android:drawablePadding="2dp"
+                android:text="Femenino" />
+
+            <RadioButton
+                android:id="@+id/rbOtro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="Otro" />
+        </RadioGroup>
+
+        <!-- Fecha de nacimiento -->
+        <ImageView
+            android:id="@+id/imgCalendario"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginTop="12dp"
+            android:contentDescription="Fecha de nacimiento"
+            app:layout_constraintStart_toStartOf="@+id/tilIdentidad"
+            app:layout_constraintTop_toBottomOf="@+id/rgGenero"
+            app:srcCompat="@drawable/calendar" />
+
+        <TextView
+            android:id="@+id/txtFechaNacimientoTitulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="Fecha Nacimiento"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/imgCalendario"
+            app:layout_constraintStart_toEndOf="@+id/imgCalendario"
+            app:layout_constraintTop_toTopOf="@+id/imgCalendario" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilDia"
+            app:layout_constraintHorizontal_weight="1"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:hint="Día"
+            app:layout_constraintEnd_toStartOf="@+id/tilMes"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="@+id/tilIdentidad"
+            app:layout_constraintTop_toBottomOf="@+id/imgCalendario">
+
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:id="@+id/txtDia"
+                android:maxLines="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilMes"
+            app:layout_constraintHorizontal_weight="1.3"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:hint="Mes"
+            app:layout_constraintEnd_toStartOf="@+id/tilAnio"
+            app:layout_constraintStart_toEndOf="@+id/tilDia"
+            app:layout_constraintTop_toTopOf="@+id/tilDia">
+
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:id="@+id/txtMes"
+                android:maxLines="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilAnio"
+            app:layout_constraintHorizontal_weight="1"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Año"
+            app:layout_constraintEnd_toEndOf="@+id/tilIdentidad"
+            app:layout_constraintStart_toEndOf="@+id/tilMes"
+            app:layout_constraintTop_toTopOf="@+id/tilDia">
+
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:id="@+id/txtAnio"
+                android:maxLines="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Teléfono -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilTelefono"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:hint="Teléfono"
+            app:layout_constraintEnd_toEndOf="@+id/tilIdentidad"
+            app:layout_constraintStart_toStartOf="@+id/tilIdentidad"
+            app:layout_constraintTop_toBottomOf="@+id/tilDia"
+            app:startIconDrawable="@drawable/ic_phone">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtTelefono"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="phone"
+                android:maxLength="10" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Botón Grabar -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnGrabar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/boton"
+            android:text="Grabar"
+            android:textColor="@color/white"
+            app:icon="@drawable/ic_save"
+            app:iconGravity="textStart"
+            app:iconTint="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/tilIdentidad"
+            app:layout_constraintStart_toStartOf="@+id/tilIdentidad"
+            app:layout_constraintTop_toBottomOf="@+id/tilTelefono" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
